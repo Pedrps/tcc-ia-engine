@@ -1,0 +1,17 @@
+name: Staging Deploy
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy para Staging
+        run: |
+          echo "🚀 Deploy para staging"
+          echo "Branch: staging"
+          echo "Commit: ${{ github.sha }}"
+          echo "✅ Pronto para testes"
